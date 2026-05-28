@@ -1,2 +1,11 @@
 /.vscode
 /Semana 02/vibe_coding/__pycache__
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+!.env.example
