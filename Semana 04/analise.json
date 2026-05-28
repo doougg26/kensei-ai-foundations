@@ -1,0 +1,23 @@
+{
+  "total_arquivos": 1,
+  "resultados": [
+    {
+      "arquivo": "Z:\\Nova pasta (3)\\Semana 04\\texto.txt",
+      "analise": {
+        "resumo": [
+          "O texto explica como controlar o uso de chaves de API adicionando referenciadores HTTP como restrições de site, garantindo que apenas URLs específicas possam utilizá-las.",
+          "Detalha o suporte limitado a caracteres curinga, onde * pode substituir um subdomínio ou caminho, mas não pode ser usado no meio de um URL.",
+          "Além disso, menciona que números de porta podem ser incluídos nas restrições de site para um controle mais preciso das solicitações correspondentes."
+        ],
+        "sentimento": "neutro",
+        "palavras_chave": [
+          "Chaves API",
+          "Restrições",
+          "HTTP",
+          "Caracteres curinga",
+          "Portas"
+        ]
+      }
+    }
+  ]
+}
