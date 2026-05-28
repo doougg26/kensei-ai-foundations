@@ -1,6 +1,6 @@
 # Semana 03 - Dados com Pandas e Matplotlib
 
-Esta semana teve como foco transformar arquivos CSV em informacao util usando Python. A base veio do PDF **Kensei AI Foundations - Semana 03: Dados com Pandas**, que apresentou o fluxo essencial de uma analise de dados: carregar, explorar, limpar, filtrar, agrupar, visualizar e documentar.
+Esta semana teve como foco transformar arquivos CSV em informacao util usando Python.
 
 ## O que foi feito
 
@@ -9,7 +9,6 @@ Foram trabalhados dois datasets principais:
 - `cybersecurity_attacks.csv`: registros de ataques ciberneticos.
 - `01_Netflix_2016_2025.csv`: dados de titulos da Netflix entre 2016 e 2025.
 
-Tambem foi criado um menu para consultar arquivos de malware na pasta `relacao-malwares`, usando os CSVs de ransomware, spyware e trojan.
 
 ## Scripts criados
 
@@ -19,7 +18,6 @@ Tambem foi criado um menu para consultar arquivos de malware na pasta `relacao-m
 - `02_limpar_dados.py`: remove duplicados, preenche nulos, converte datas e remove registros invalidos.
 - `03_filtrar_agrupar.py`: filtra ataques DDoS do ultimo mes do dataset e mostra o top 10 por localidade.
 - `04_graficos.py`: gera graficos com Matplotlib.
-- `05_analise_completa.py`: executa o pipeline completo em um unico script.
 
 Graficos gerados:
 
@@ -37,9 +35,6 @@ Graficos gerados:
 - `netflix_anos.png`
 - `netflix_tipos.png`
 
-### Malwares
-
-- `menu_malwares.py`: exibe um menu para consultar os arquivos `Ransomware.csv`, `Spy.csv` e `Trojan.csv`.
 
 ## Conclusoes
 
@@ -61,13 +56,7 @@ Nos dados da Netflix, foi possivel observar como Pandas facilita a leitura e org
 - Como ordenar rankings com `sort_values()`.
 - Como criar graficos de barras, linha e pizza com Matplotlib.
 - Como salvar graficos em arquivos PNG.
-- Como documentar uma analise em um `README.md`.
 
-## Relacao com o PDF
-
-O PDF mostrou que Pandas funciona como um "Excel dentro do Python", permitindo manipular tabelas com poucas linhas de codigo. Na pratica, isso apareceu ao carregar CSVs, limpar dados, contar registros e gerar estatisticas.
-
-Tambem foi reforcado que Matplotlib transforma tabelas em visualizacoes. Isso foi aplicado nos graficos de ataques por mes, top 10 localidades, tipos de ataque, generos da Netflix, titulos por ano e tipos de producao.
 
 O principal aprendizado foi o pipeline completo:
 
