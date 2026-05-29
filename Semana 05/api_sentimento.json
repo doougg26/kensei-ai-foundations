@@ -1,0 +1,112 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c8ef6305-e3f6-436e-b513-89ef64fda9c4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -96,
+        -16
+      ],
+      "id": "075dff47-4722-42db-8bd6-fff38c0a8346",
+      "name": "Webhook",
+      "webhookId": "c8ef6305-e3f6-436e-b513-89ef64fda9c4"
+    },
+    {
+      "parameters": {
+        "chatId": "1733153625",
+        "text": "={{ $json.content.parts[0].text }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        -16
+      ],
+      "id": "60ac641c-354e-43f8-8e15-b8d9fbf7cdac",
+      "name": "Send a text message2",
+      "webhookId": "9caaac24-1125-46d7-b797-a5b45f208a9d",
+      "credentials": {
+        "telegramApi": {
+          "id": "xLkWukEeV8RHnJ4n",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "qwen3.5-flash",
+          "mode": "list",
+          "cachedResultName": "qwen3.5-flash"
+        },
+        "messages": {
+          "messageValues": [
+            {
+              "content": "classifique a mensagem em positivo/negativo/neutro."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.alibabaCloud",
+      "typeVersion": 1.1,
+      "position": [
+        144,
+        0
+      ],
+      "id": "b0fcb4a7-87f3-459e-adba-7ad79e442776",
+      "name": "Message a model",
+      "credentials": {
+        "alibabaCloudApi": {
+          "id": "qoEbik2uacIFFFDw",
+          "name": "Alibaba Cloud account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c7f1bece-64bc-499e-82fe-594af1ac8257",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a78b043e201eed4b6968b9e865b7235a924bd561433dd790d26ec682b150464c"
+  },
+  "id": "bVpcxk58xoA2KUgq",
+  "tags": []
+}

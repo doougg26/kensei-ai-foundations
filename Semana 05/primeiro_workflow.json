@@ -1,0 +1,127 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c725dbc4-0c8b-4f7f-b42e-d7233a4edb34",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "models/gemini-3-flash-preview"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Gere uma pequena frase motivacional para cyber"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "d1c2a8c9-873f-4a4f-9f8d-b2ceb1aca162",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "KPcIddeDLTZlxdlP",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1iqQ765wUoTCw1pmXtO0zOuKu7fzVdM5duyeea7uFB3A",
+          "mode": "list",
+          "cachedResultName": "frase cyber",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iqQ765wUoTCw1pmXtO0zOuKu7fzVdM5duyeea7uFB3A/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 746946860,
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iqQ765wUoTCw1pmXtO0zOuKu7fzVdM5duyeea7uFB3A/edit#gid=746946860"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        528,
+        0
+      ],
+      "id": "253acd7e-77a1-4123-98c9-7c53829ccea4",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m4Hgla2vaGsIUIov",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "80e5ab9a-f671-4958-b711-d7eecb9361e2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a78b043e201eed4b6968b9e865b7235a924bd561433dd790d26ec682b150464c"
+  },
+  "id": "64qbtgGElgSaJDOX",
+  "tags": []
+}
